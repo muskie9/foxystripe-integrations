@@ -18,6 +18,8 @@ class FoxyStripeIntegrationsSiteConfig extends DataExtension {
                 GridFieldConfig_RelationEditor::create()
                     ->removeComponentsByType('GridFieldAddNewButton')
 				    ->removeComponentsByType('GridFieldAddExistingAutocompleter')
+                    ->removeComponentsByType('GridFieldDeleteAction')
+		            ->addComponent(new GridFieldDeleteAction(false))// need integrations to be deleted, rather than unlinked
                     ->addComponent(new GridFieldAddNewMultiClass())
             )
 		));
